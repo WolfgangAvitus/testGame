@@ -5,9 +5,10 @@ import java.util.ArrayList;
 public class TestState extends State{
 	
 	private ArrayList<Entity> entities;
+	private World world;
 	
 	public TestState() {
-		System.out.println("****");
+		entities = new ArrayList<Entity>();
 		entities.add(new CircleEnt());
 		super.draw(entities.get(0));
 	}
@@ -34,8 +35,9 @@ public class TestState extends State{
 
 	@Override
 	public void update() {
-		// TODO Auto-generated method stub
-		
+		for (Entity e : entities) {
+			e.update();
+		}
 	}
 
 }

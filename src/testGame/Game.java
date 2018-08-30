@@ -1,29 +1,30 @@
 package testGame;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.util.ArrayList;
 import java.util.Stack;
 
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.scene.*;
-import javafx.scene.image.*;
 import javafx.stage.Stage;
 
 public class Game extends Application{
 	
 	private Stack<State> states;
 	
+	public static int WINX = 1000;
+	public static int WINY = 1000;
+	public static int NUMGRIDX = 20;
+	public static int NUMGRIDY = 20;
+	
 	public static Group ROOT;
+	public static Scene SCENE;
 	public static ResourceManager RESOURCES = new ResourceManager();
 	
 	@Override
 	public void start(Stage stage) throws Exception {
+		states = new Stack<State>();
 		Game.ROOT = new Group();
-		Scene scene = new Scene(ROOT, 600, 600);
+		Game.SCENE = new Scene(ROOT, WINX, WINY);
 		
 		AnimationTimer timer = new AnimationTimer() {
 			@Override
@@ -33,12 +34,15 @@ public class Game extends Application{
 			}
 		};
 		
-		states.push(new TestState());
 		
-		stage.setScene(scene);
+		states.push(new TestState());
+		timer.start();
+		stage.setScene(Game.SCENE);
 		stage.show();
 	}
 
+	
+	
 	public static void main(String[] args) {
 		launch(args);
 	}
