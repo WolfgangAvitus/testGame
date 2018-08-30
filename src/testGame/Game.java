@@ -26,6 +26,7 @@ public class Game extends Application{
 		Game.ROOT = new Group();
 		Game.SCENE = new Scene(ROOT, WINX, WINY);
 		
+		
 		AnimationTimer timer = new AnimationTimer() {
 			@Override
 			public void handle(long arg0) {
