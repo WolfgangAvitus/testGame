@@ -6,6 +6,8 @@ import javafx.scene.image.ImageView;
 public abstract class Entity {
 	private ImageView imV;
 	private Image image;
+	private int gridX;
+	private int gridY;
 	
 	public abstract void update();
 	
