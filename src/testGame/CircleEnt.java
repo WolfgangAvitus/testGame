@@ -3,7 +3,7 @@ package testGame;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 
-public class CircleEnt extends Entity{
+public class CircleEnt extends Entity {
 	private GameEvent<KeyEvent> playerMovement;
 	
 	public CircleEnt() { //use resource manager instead

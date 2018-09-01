@@ -12,7 +12,6 @@ public abstract class Entity {
 	public abstract void update();
 	
 	
-	
 	public Entity(Image image, int x, int y) {
 		this.image = image;
 		this.imV = new ImageView(this.image);
@@ -46,7 +45,5 @@ public abstract class Entity {
 	
 	public void addY(int y) {
 		this.imV.setY(this.getY() + y);
-	}
-	
-	
+	}	
 }

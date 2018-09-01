@@ -16,5 +16,9 @@ public class World {
 		this.gridWidth = Game.WINX/Game.NUMGRIDX;
 		this.gridHeight = Game.WINY/Game.NUMGRIDY;
 	}
+	
+	public void update(){
+		
+	}
 
 }
