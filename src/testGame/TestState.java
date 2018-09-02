@@ -8,6 +8,7 @@ public class TestState extends State{
 	private World world;
 	
 	public TestState() {
+		world = new World();
 		entities = new ArrayList<Entity>();
 		entities.add(new CircleEnt());
 		super.draw(entities.get(0));
@@ -38,6 +39,8 @@ public class TestState extends State{
 		for (Entity e : entities) {
 			e.update();
 		}
+		
+		world.update();
 	}
 
 }

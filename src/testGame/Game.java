@@ -11,8 +11,8 @@ public class Game extends Application{
 	
 	private Stack<State> states;
 	
-	public static int WINX = 1000;
-	public static int WINY = 1000;
+	public static int WINX = 800;
+	public static int WINY = 800;
 	public static int NUMGRIDX = 20;
 	public static int NUMGRIDY = 20;
 	
