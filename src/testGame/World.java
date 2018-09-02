@@ -17,8 +17,12 @@ public class World {
 		this.gridHeight = Game.WINY/Game.NUMGRIDY;
 	}
 	
+<<<<<<< HEAD
 	
 	public void update() {
+=======
+	public void update(){
+>>>>>>> 0e7a85e20a9c24e57f5dfb3520944c1eb0fd7796
 		
 	}
 
