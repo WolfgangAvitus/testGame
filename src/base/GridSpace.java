@@ -1,5 +1,6 @@
 package base;
 
+import java.util.ArrayList;
 
 public class GridSpace {
 	
@@ -9,29 +10,27 @@ public class GridSpace {
 	private double maxY;
 	private int gridID;
 	
-	private Entity entity;
+	private ArrayList<Entity> entities; //stack of entities, if multiple entities handle it
 	
 	public GridSpace(int id) {
 		gridID = id;
-		entity = null;
+		entities = new ArrayList<Entity>();
 	}
 	
 	public Entity getEntity() {
-		return entity;
+		return entities.get(0);
 	}
 	
-	public boolean hasEntity() {
-		if (entity == null) {
-			return false;
-		}
-		else {
+	public boolean isCollision(){
+		if (entities.size() > 1){
 			return true;
+		}
+		else{
+			return false;
 		}
 	}
 	
 	public int getID() {
 		return gridID;
 	}
-	
-	
 }

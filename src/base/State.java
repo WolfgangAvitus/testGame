@@ -15,10 +15,6 @@ public abstract class State {
 		Game.ROOT.getChildren().add(this.pane);
 	}
 	
-	public void draw(Entity e) {
-		this.pane.getChildren().add(e.getDrawable());
-	}
-	
 	public Pane getPane() {
 		return this.pane;
 	}

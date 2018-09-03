@@ -12,16 +12,16 @@ public class EventMoveDefault implements GameEvent<KeyEvent>{
 			@Override
 			public void handle(KeyEvent eve) {
 				if (eve.getCode() == KeyCode.UP) {
-					entity.addY(-5);
+					entity.moveUp();
 				}
 				if (eve.getCode() == KeyCode.DOWN) {
-					entity.addY(5);
+					entity.moveDown();
 				}
 				if (eve.getCode() == KeyCode.LEFT) {
-					entity.addX(-5);
+					entity.moveLeft();
 				}
 				if (eve.getCode() == KeyCode.RIGHT) {
-					entity.addX(5);
+					entity.moveRight();
 				}
 			}
 		};

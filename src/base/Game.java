@@ -13,8 +13,9 @@ public class Game extends Application{
 	private Stack<State> states;
 	
 	public static int WINDIM = 800;
-	public static int NUMGRID = 20; //number of grids in a column
-	public static double GRIDLEN = Game.WINDIM/Game.NUMGRID;
+	public static int NUMGRIDCOL = 10; //number of grids in a column
+	public static int TOTALGRIDS = NUMGRIDCOL * NUMGRIDCOL;
+	public static double GRIDLEN = WINDIM/NUMGRIDCOL;
 	
 	public static Group ROOT;
 	public static Scene SCENE;

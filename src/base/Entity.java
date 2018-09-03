@@ -7,48 +7,64 @@ import javafx.scene.image.ImageView;
 public abstract class Entity {
 	private ImageView imV;
 	private Image image;
-	private int gridX;
-	private int gridY;
+	private int gridIdx;
 	
 	public abstract void update();
 	
 	
-	public Entity(Image image, int x, int y) {
+	public Entity(Image image, double x, double y, int gridIdx) {
 		this.image = image;
 		this.imV = new ImageView(this.image);
-		this.imV.setX((int)x);
-		this.imV.setX((int)y);
+		this.imV.setX(x);
+		this.imV.setX(y);
+		this.gridIdx = gridIdx;
 	}
 	
 	public ImageView getDrawable() {
 		return imV;
 	}
 	
-	public void setX(int x) {
-		this.imV.setX((int)x);
+	public int getIdx(){
+		return gridIdx;
 	}
 	
-	public int getX() {
-		return (int)this.imV.getX();
+	public void setX(double x) {
+		this.imV.setX(x);
 	}
 	
-	public void setY(int y) {
-		this.imV.setY((int)y);
+	public double getX() {
+		return this.imV.getX();
 	}
 	
-	public int getY() {
-		return (int)this.imV.getY();
+	public void setY(double y) {
+		this.imV.setY(y);
 	}
 	
-	public void addX(int x) {
+	public double getY() {
+		return this.imV.getY();
+	}
+	
+	public void addX(double x) {
 		this.imV.setX(this.getX() + x);
 	}
 	
-	public void addY(int y) {
+	public void addY(double y) {
 		this.imV.setY(this.getY() + y);
 	}	
 	
 	public void moveLeft() {
-		this.imV.setY(this.getX() + Game.GRIDLEN);
+		this.gridIdx -= 1;
+	}
+	
+	public void moveRight(){
+		this.gridIdx += 1;
+	}
+	
+	public void moveDown(){
+		this.gridIdx += Game.NUMGRIDCOL;
+	}
+	
+	public void moveUp(){
+		this.gridIdx -= Game.NUMGRIDCOL;
 	}
 }

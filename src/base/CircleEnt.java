@@ -6,8 +6,9 @@ import javafx.scene.input.KeyEvent;
 public class CircleEnt extends Entity {
 	private GameEvent<KeyEvent> playerMovement;
 	
-	public CircleEnt() { //use resource manager instead
-		super(new Image(Game.RESOURCES.getResource("boulder.png")), 300, 100);
+	
+	public CircleEnt(double x, double y, int gridIdx) { //use resource manager instead
+		super(new Image(Game.RESOURCES.getResource("boulder.png")), x, y, gridIdx);
 		playerMovement = new EventMoveDefault(this);
 		Game.SCENE.addEventHandler(KeyEvent.KEY_PRESSED, playerMovement.getHandler());	
 	}
