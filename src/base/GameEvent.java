@@ -1,4 +1,4 @@
-package testGame;
+package base;
 
 import javafx.event.Event;
 import javafx.event.EventHandler;

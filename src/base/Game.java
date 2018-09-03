@@ -1,7 +1,8 @@
-package testGame;
+package base;
 
 import java.util.Stack;
 
+import engine.ResourceManager;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.*;
@@ -11,10 +12,9 @@ public class Game extends Application{
 	
 	private Stack<State> states;
 	
-	public static int WINX = 800;
-	public static int WINY = 800;
-	public static int NUMGRIDX = 20;
-	public static int NUMGRIDY = 20;
+	public static int WINDIM = 800;
+	public static int NUMGRID = 20; //number of grids in a column
+	public static double GRIDLEN = Game.WINDIM/Game.NUMGRID;
 	
 	public static Group ROOT;
 	public static Scene SCENE;
@@ -24,7 +24,7 @@ public class Game extends Application{
 	public void start(Stage stage) throws Exception {
 		states = new Stack<State>();
 		Game.ROOT = new Group();
-		Game.SCENE = new Scene(ROOT, WINX, WINY);
+		Game.SCENE = new Scene(ROOT, WINDIM, WINDIM);
 		
 		
 		AnimationTimer timer = new AnimationTimer() {

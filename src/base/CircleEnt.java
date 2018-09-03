@@ -1,4 +1,4 @@
-package testGame;
+package base;
 
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;

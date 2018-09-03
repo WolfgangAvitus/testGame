@@ -1,5 +1,6 @@
-package testGame;
+package base;
 
+import engine.Collision;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
@@ -46,4 +47,8 @@ public abstract class Entity {
 	public void addY(int y) {
 		this.imV.setY(this.getY() + y);
 	}	
+	
+	public void moveLeft() {
+		this.imV.setY(this.getX() + Game.GRIDLEN);
+	}
 }

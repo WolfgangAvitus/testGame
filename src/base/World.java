@@ -1,29 +1,31 @@
-package testGame;
+package base;
 
 import java.util.ArrayList;
 
+import engine.CollisionControl;
+
 public class World {
 	
-	private double gridWidth;
-	private double gridHeight;
+	private double gridLen; //horizontal length, same as vertical
 	
 	private ArrayList<ArrayList<GridSpace>> grid;
 	private ArrayList<Entity> entities;
 	
+	private CollisionControl collisionManager;
+	
 	public World() {
 		grid = new ArrayList<ArrayList<GridSpace>>();
+		
+		
 		entities = new ArrayList<Entity>();
-		this.gridWidth = Game.WINX/Game.NUMGRIDX;
-		this.gridHeight = Game.WINY/Game.NUMGRIDY;
+		this.gridLen = Game.WINDIM/Game.NUMGRID;
 	}
-	
-<<<<<<< HEAD
 	
 	public void update() {
-=======
-	public void update(){
->>>>>>> 0e7a85e20a9c24e57f5dfb3520944c1eb0fd7796
-		
+	
 	}
 
+	public void addEntity() {
+		
+	}
 }
