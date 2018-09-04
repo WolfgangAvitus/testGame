@@ -7,12 +7,13 @@ import javafx.scene.input.KeyEvent;
 public class EventMoveDefault implements GameEvent<KeyEvent>{
 	private EventHandler<KeyEvent> handler;
 	
-	public EventMoveDefault(Entity entity) {
+	public EventMoveDefault(Entity entity, World world) {
 		this.handler = new EventHandler<KeyEvent>() {
 			@Override
 			public void handle(KeyEvent eve) {
 				if (eve.getCode() == KeyCode.UP) {
 					entity.moveUp();
+					world.movetoGrid(entity);
 				}
 				if (eve.getCode() == KeyCode.DOWN) {
 					entity.moveDown();

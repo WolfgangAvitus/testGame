@@ -12,11 +12,11 @@ public class GridSpace {
 	private Image image;
 	private ImageView imV;
 	
-	private ArrayList<Entity> entities; //stack of entities, if multiple entities handle it
+	private ArrayList<Entity> entitiesOnGrid; //stack of entities, if multiple entities handle it
 	
 	public GridSpace(GridPosition pos) {
 		this.pos = pos;
-		entities = new ArrayList<Entity>();
+		entitiesOnGrid = new ArrayList<Entity>();
 		image = new Image(Game.RESOURCES.getResource("dirt.png"));
 		this.imV = new ImageView(this.image);
 		this.imV.setFitHeight(Game.GRIDLEN);
@@ -26,8 +26,35 @@ public class GridSpace {
 	}
 	
 	public Entity getEntity() {
-		return entities.get(0);
+		return entitiesOnGrid.get(0);
 	}
+	
+	public void addEntity(Entity e) {
+		entitiesOnGrid.add(e);
+	}
+	
+	public void removeEntity(Entity e) {
+		entitiesOnGrid.remove(e);
+	}
+	
+	//entity movement
+	public void moveEntityDown(Entity e) {
+		
+	}
+	
+	public void moveEntityUp(Entity e) {
+			
+	}
+	
+	public void moveEntityLeft(Entity e) {
+		
+	}
+	
+	public void moveEntityRight(Entity e) {
+		
+	}
+	
+	
 	
 	public GridPosition getPosition() {
 		return pos;
@@ -38,7 +65,7 @@ public class GridSpace {
 	}
 	
 	public boolean isCollision(){
-		if (entities.size() > 1){
+		if (entitiesOnGrid.size() > 1){
 			return true;
 		}
 		else{

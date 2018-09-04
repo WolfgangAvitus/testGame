@@ -8,9 +8,9 @@ public class CircleEnt extends Entity {
 	private GameEvent<KeyEvent> playerMovement;
 	
 	
-	public CircleEnt(GridPosition pos) { //use resource manager instead
+	public CircleEnt(GridPosition pos, World world) { //use resource manager instead
 		super(new Image(Game.RESOURCES.getResource("boulder.png")), pos);
-		playerMovement = new EventMoveDefault(this);
+		playerMovement = new EventMoveDefault(this, world);
 		Game.SCENE.addEventHandler(KeyEvent.KEY_PRESSED, playerMovement.getHandler());	
 	}
 
