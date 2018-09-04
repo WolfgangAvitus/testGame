@@ -1,5 +1,6 @@
 package base;
 
+import engine.GridPosition;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 
@@ -7,8 +8,8 @@ public class CircleEnt extends Entity {
 	private GameEvent<KeyEvent> playerMovement;
 	
 	
-	public CircleEnt(double x, double y, int gridIdx) { //use resource manager instead
-		super(new Image(Game.RESOURCES.getResource("boulder.png")), x, y, gridIdx);
+	public CircleEnt(GridPosition pos) { //use resource manager instead
+		super(new Image(Game.RESOURCES.getResource("boulder.png")), pos);
 		playerMovement = new EventMoveDefault(this);
 		Game.SCENE.addEventHandler(KeyEvent.KEY_PRESSED, playerMovement.getHandler());	
 	}
@@ -27,6 +28,11 @@ public class CircleEnt extends Entity {
 		if (super.getY() > 600){
 			super.setY(600);
 		}
+	}
+
+	@Override
+	public void draw() {
+		super.drawFromGridPos();
 	}
 
 }

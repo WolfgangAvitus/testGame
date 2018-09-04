@@ -1,23 +1,27 @@
 package base;
 
 import engine.Collision;
+import engine.GridPosition;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public abstract class Entity {
 	private ImageView imV;
 	private Image image;
-	private int gridIdx;
+	private GridPosition pos;
 	
 	public abstract void update();
+	public abstract void draw();
 	
 	
-	public Entity(Image image, double x, double y, int gridIdx) {
+	public Entity(Image image, GridPosition pos) {
 		this.image = image;
 		this.imV = new ImageView(this.image);
-		this.imV.setX(x);
-		this.imV.setX(y);
-		this.gridIdx = gridIdx;
+		this.imV.setFitHeight(Game.GRIDLEN);
+		this.imV.setFitWidth(Game.GRIDLEN);
+		this.imV.setX(pos.getX());
+		this.imV.setX(pos.getY());
+		this.pos= pos;
 	}
 	
 	public ImageView getDrawable() {
@@ -25,7 +29,12 @@ public abstract class Entity {
 	}
 	
 	public int getIdx(){
-		return gridIdx;
+		return pos.getIdx();
+	}
+	
+	public void drawFromGridPos() {
+		setX(pos.getX());
+		setY(pos.getY());
 	}
 	
 	public void setX(double x) {
@@ -53,18 +62,18 @@ public abstract class Entity {
 	}	
 	
 	public void moveLeft() {
-		this.gridIdx -= 1;
+		this.pos.moveLeft();
 	}
 	
 	public void moveRight(){
-		this.gridIdx += 1;
+		this.pos.moveRight();
 	}
 	
 	public void moveDown(){
-		this.gridIdx += Game.NUMGRIDCOL;
+		this.pos.moveDown();
 	}
 	
 	public void moveUp(){
-		this.gridIdx -= Game.NUMGRIDCOL;
+		this.pos.moveUp();
 	}
 }
