@@ -2,13 +2,14 @@ package base;
 
 import java.util.ArrayList;
 
-import engine.CollisionControl;
 import engine.GridPosition;
+import engine.GridSpace;
+import entities.Entity;
 import javafx.scene.layout.Pane;
 
 public class World {
 	
-	private ArrayList<GridSpace> grid;
+	public ArrayList<GridSpace> grid;
 	private ArrayList<Entity> entities; //all entities
 	private Pane pane;
 	
@@ -18,13 +19,12 @@ public class World {
 		this.pane = pane;
 		
 		drawGrid();
-		addEntity(new CircleEnt(grid.get(0).getPosition(), this));
 	}
 	
 	
 	public void update() {
 		for (Entity e : entities){
-			e.update();
+			e.update(this);
 			e.draw();
 		}
 		
@@ -42,17 +42,36 @@ public class World {
 	
 	//entity movement
 	
-	public void moveDown(Entity e) {
-		GridSpace oldspace = grid.get(e.getIdx());
-		
-	}
-	
-	
-	public void movetoGrid(Entity e) {
+	public void moveDownGrid(Entity e) {
 		GridSpace oldspace = grid.get(e.getIdx());
 		oldspace.removeEntity(e);
-		
+		int idx = e.moveDown();
+		grid.get(idx).addEntity(e);
 	}
+	
+	public void moveUpGrid(Entity e) {
+		GridSpace oldspace = grid.get(e.getIdx());
+		oldspace.removeEntity(e);
+		int idx = e.moveUp();
+		grid.get(idx).addEntity(e);
+	}
+	
+	public void moveRightGrid(Entity e) {
+		GridSpace oldspace = grid.get(e.getIdx());
+		oldspace.removeEntity(e);
+		int idx = e.moveRight();
+		grid.get(idx).addEntity(e);
+	}
+	
+	public void moveLeftGrid(Entity e) {
+		GridSpace oldspace = grid.get(e.getIdx());
+		oldspace.removeEntity(e);
+		int idx = e.moveLeft();
+		grid.get(idx).addEntity(e);
+	}
+	
+	
+	
 	
 	public void drawGrid() {
 		for (int i = 0; i < Game.TOTALGRIDS; i++) {

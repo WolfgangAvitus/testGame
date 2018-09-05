@@ -1,6 +1,7 @@
 package base;
 
-import java.util.ArrayList;
+import entities.CircleEnt;
+import entities.Enemy1;
 
 public class TestState extends State{
 	
@@ -8,6 +9,8 @@ public class TestState extends State{
 	
 	public TestState() {
 		world = new World(super.getPane());
+		world.addEntity(new CircleEnt(world.grid.get(0).getPosition(), world));
+		world.addEntity(new Enemy1(world.grid.get(59).getPosition(), world));
 	}
 	
 	@Override

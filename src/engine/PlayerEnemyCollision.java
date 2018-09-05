@@ -1,6 +1,6 @@
 package engine;
 
-import base.Entity;
+import entities.Entity;
 
 public class PlayerEnemyCollision implements Collision {
 

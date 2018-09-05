@@ -1,8 +1,9 @@
-package base;
+package engine;
 
 import java.util.ArrayList;
 
-import engine.GridPosition;
+import base.Game;
+import entities.Entity;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 

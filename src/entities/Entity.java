@@ -1,6 +1,7 @@
-package base;
+package entities;
 
-import engine.Collision;
+import base.Game;
+import base.World;
 import engine.GridPosition;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -10,7 +11,7 @@ public abstract class Entity {
 	private Image image;
 	private GridPosition pos;
 	
-	public abstract void update();
+	public abstract void update(World world);
 	public abstract void draw();
 	
 	
@@ -20,7 +21,7 @@ public abstract class Entity {
 		this.imV.setFitHeight(Game.GRIDLEN);
 		this.imV.setFitWidth(Game.GRIDLEN);
 		this.imV.setX(pos.getX());
-		this.imV.setX(pos.getY());
+		this.imV.setY(pos.getY());
 		this.pos= pos;
 	}
 	
@@ -61,19 +62,23 @@ public abstract class Entity {
 		this.imV.setY(this.getY() + y);
 	}	
 	
-	public void moveLeft() {
+	public int moveLeft() {
 		this.pos.moveLeft();
+		return this.pos.getIdx();
 	}
 	
-	public void moveRight(){
+	public int moveRight(){
 		this.pos.moveRight();
+		return this.pos.getIdx();
 	}
 	
-	public void moveDown(){
+	public int moveDown(){
 		this.pos.moveDown();
+		return this.pos.getIdx();
 	}
 	
-	public void moveUp(){
+	public int moveUp(){
 		this.pos.moveUp();
+		return this.pos.getIdx();
 	}
 }
