@@ -5,6 +5,11 @@ import javafx.event.EventHandler;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 
+/**
+ * Implementation of a game event (some sort of user input) used for basic player movement
+ * @author James
+ *
+ */
 public class EventMoveDefault implements GameEvent<KeyEvent>{
 	private EventHandler<KeyEvent> handler;
 	

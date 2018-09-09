@@ -3,6 +3,12 @@ package engine;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
+/**
+ * Simple resource manager, was having problems between windows and linux. 
+ * TODO check it works well on linux
+ * @author James
+ *
+ */
 public class ResourceManager {
 	
 	public ResourceManager() {

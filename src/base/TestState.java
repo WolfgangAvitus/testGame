@@ -3,9 +3,14 @@ package base;
 import entities.CircleEnt;
 import entities.Enemy1;
 
+/**
+ * TestState for demo. Probably should just be called playing
+ * @author James
+ *
+ */
 public class TestState extends State{
 	
-	private World world;
+	private World world; 
 	
 	public TestState() {
 		world = new World(super.getPane());
@@ -14,7 +19,7 @@ public class TestState extends State{
 	}
 	
 	@Override
-	public void startUp() {
+	public void startUp() { //obsolete? probably.
 		// TODO Auto-generated method stub
 		
 	}

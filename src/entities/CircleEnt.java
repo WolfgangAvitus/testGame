@@ -8,6 +8,9 @@ import engine.GridPosition;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 
+//TEST PLAYER ENTITY INAPPROPRIATELY NAMED
+
+
 public class CircleEnt extends Entity {
 	private GameEvent<KeyEvent> playerMovement;
 	

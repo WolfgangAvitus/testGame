@@ -6,6 +6,11 @@ import engine.GridPosition;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+/**
+ * abstract entity class
+ * @author James
+ *
+ */
 public abstract class Entity {
 	private ImageView imV;
 	private Image image;

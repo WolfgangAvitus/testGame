@@ -2,6 +2,12 @@ package engine;
 
 import base.Game;
 
+/**
+ * essentially a euclidean 2d vector class except it contains a gridIdx. For simplicity a 
+ * 2d array was not used to represent the grid world
+ * @author James
+ *
+ */
 public class GridPosition {
 	private int gridIdx;
 	private double xPos;

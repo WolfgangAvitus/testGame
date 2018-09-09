@@ -7,6 +7,11 @@ import entities.Entity;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+/**
+ * represents the actual grid space and contains all entites on said space
+ * @author James
+ *
+ */
 public class GridSpace {
 	
 	private GridPosition pos;
@@ -38,7 +43,7 @@ public class GridSpace {
 		entitiesOnGrid.remove(e);
 	}
 	
-	//entity movement
+	//entity movement, obsolete?
 	public void moveEntityDown(Entity e) {
 		
 	}

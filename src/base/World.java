@@ -7,6 +7,11 @@ import engine.GridSpace;
 import entities.Entity;
 import javafx.scene.layout.Pane;
 
+/**
+ * Represents the grid and all of the entities on it
+ * @author James
+ *
+ */
 public class World {
 	
 	public ArrayList<GridSpace> grid;
@@ -22,6 +27,9 @@ public class World {
 	}
 	
 	
+	/**
+	 * update all entities and handle collisions on the grid
+	 */
 	public void update() {
 		for (Entity e : entities){
 			e.update(this);
@@ -34,6 +42,10 @@ public class World {
 		
 	}
 	
+	/**
+	 * add entity to the game screen
+	 * @param e
+	 */
 	public void addEntity(Entity e) {
 		entities.add(e);
 		draw(e);
@@ -41,7 +53,6 @@ public class World {
 	
 	
 	//entity movement
-	
 	public void moveDownGrid(Entity e) {
 		GridSpace oldspace = grid.get(e.getIdx());
 		oldspace.removeEntity(e);
@@ -72,7 +83,9 @@ public class World {
 	
 	
 	
-	
+	/**
+	 * setup class to draw the grid onto the screen
+	 */
 	public void drawGrid() {
 		for (int i = 0; i < Game.TOTALGRIDS; i++) {
 			grid.add(new GridSpace(new GridPosition(i)));
@@ -80,6 +93,10 @@ public class World {
 		}
 	}
 	
+	/**
+	 * draws an entity e to the grid (entity contains the coordinates)
+	 * @param e
+	 */
 	public void draw(Entity e) {
 		this.pane.getChildren().add(e.getDrawable());
 	}
