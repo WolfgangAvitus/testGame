@@ -39,7 +39,6 @@ public class World {
 		for (GridSpace g : grid) {
 			g.handleCollision();
 		}
-		
 	}
 	
 	/**

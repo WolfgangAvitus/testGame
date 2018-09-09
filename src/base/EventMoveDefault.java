@@ -14,6 +14,9 @@ public class EventMoveDefault implements GameEvent<KeyEvent>{
 	private EventHandler<KeyEvent> handler;
 	
 	public EventMoveDefault(Entity entity, World world) {
+		/**
+		 * EventHandler is the javafx way of dealing with input events. Whenever a KeyEvent occurs it enters this code
+		 */
 		this.handler = new EventHandler<KeyEvent>() {
 			@Override
 			public void handle(KeyEvent eve) {

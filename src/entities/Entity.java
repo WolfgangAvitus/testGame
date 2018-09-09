@@ -19,7 +19,6 @@ public abstract class Entity {
 	public abstract void update(World world);
 	public abstract void draw();
 	
-	
 	public Entity(Image image, GridPosition pos) {
 		this.image = image;
 		this.imV = new ImageView(this.image);

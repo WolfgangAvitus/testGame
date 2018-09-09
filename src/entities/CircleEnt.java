@@ -31,5 +31,4 @@ public class CircleEnt extends Entity {
 	public void draw() {
 		super.drawFromGridPos();
 	}
-
 }

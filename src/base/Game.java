@@ -8,6 +8,11 @@ import javafx.application.Application;
 import javafx.scene.*;
 import javafx.stage.Stage;
 
+/**
+ * Entry point for the game
+ * @author James
+ *
+ */
 public class Game extends Application{
 	
 	private Stack<State> states;
@@ -28,7 +33,13 @@ public class Game extends Application{
 		Game.SCENE = new Scene(ROOT, WINDIM, WINDIM);
 		
 		
+		/**
+		 * main game loop. 
+		 */
 		AnimationTimer timer = new AnimationTimer() {
+			/**
+			 * handle is called 60(?) times per second. In each loop, check the current state and update it
+			 */
 			@Override
 			public void handle(long arg0) {
 				State currState = states.peek();
@@ -36,7 +47,9 @@ public class Game extends Application{
 			}
 		};
 		
-		
+		/**
+		 * Game setup. starts loop and shows window
+		 */
 		states.push(new TestState());
 		timer.start();
 		stage.setScene(Game.SCENE);
